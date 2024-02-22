@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow-anchor: none;
+    background-color: rgb(23, 23, 23);
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column; /* Adjust to column layout */
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    position: relative;
+    margin: 50px auto;
+    background: #1e1e1e;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+    padding: 15px;
+}
+
+.recipeImageContainer {
+    max-width: 50%;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.recipe-image {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.recipe-title {
+    text-decoration: underline;
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.descH3 {
+    order: -1;
+    text-decoration: underline;
+}
+
+.recipe-description {
+    color: rgb(255, 255, 255);
+    width: 90%;
+    font-family: "Amethysta";
+}
+
+
+
+
+    @media (min-width: 769px) {
+        .recipe-title  {
+            font-size: 2em; /* Default font size */
+            text-align: center;
+          }
+    }
+
+  @media (max-width: 768px) {
+    .recipe-title  {
+      font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .recipe-title {
+      font-size: 1.2em; /* Further adjustment for even smaller screens */
+    }
+  }
+
+li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+  .ingredientsList ::before {
+    content: '\2022'; /* Unicode character for a bullet point */
+    color: #ffffff; /* Adjust the color as needed */
+    display: inline-block;
+    width: 1em; 
+    margin-left: -20px; 
+}
+
+.instructions-list {
+    list-style-type: none;
+    counter-reset: my-counter; /* Reset the counter */
+}
+
+.instructions-list li {
+    margin-left: 20px; /* Adjust the margin-left as needed */
+    margin-bottom: 10px; /* Add margin-bottom to create space between list items */
+    text-indent: -15px; /* Adjust the text-indent to compensate for the margin-left */
+    position: relative;
+}
+
+.instructions-list li::before {
+    counter-increment: my-counter; /* Increment the counter for each list item */
+    content: counter(my-counter)'.'  ; /* Display the counter value */
+    color: #ffffff; /* Adjust the color as needed */
+    display: inline-block;
+    width: 1em; /* Adjust the width as needed */
+    margin-left: -20px; /* Negative margin to align the number with the text */
+}
+
+
+.nutrition-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.goHome{
+    display: inline-block;
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+
+}
+
+.homeLink{
+    cursor: pointer;
+    max-width: 45%;    
+
+}

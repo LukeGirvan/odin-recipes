@@ -1,93 +1,137 @@
-
-
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    height: 100vh;
-    background-color: rgb(23, 23, 23);
+body{
+    background-color: black;
+}
+.content{
+    max-width: 100rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
 }
 
-.landingPageTitle h1{
-    position: relative;
-    text-align: center;
-    z-index: 2;
-    margin-bottom: 20px;
+.h1holder {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
     color: white;
-    text-decoration: underline;
+}
+
+.image-holder{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.image-holder img,.blur{
+    width: 80%;
+    height: 80%;
 }
 
 
-.lasagnaImage,.stewImage,
-.pizzaImage,.fajitasImage{
-    display: block;
-    max-width: 30vw;
-    max-height: 30vh;
-    border: 3px solid white;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    transition: opacity 0.5s ease-in-out; 
-}
-
-
-
-.recipesLeft{
-    left: 25px;
-    position: absolute;
-    width: 30vw;
-    height:100vh;
-}
-
-.recipesRight{
-    right: 45px;
-    
-    position: absolute;
-    width: 30vw;
-    height:100vh;
-}
-
-.image-container{
-    margin: 20px;
+.div-around-image{
     position: relative;
-    display: inline-block;
+    /* border: 3px solid hotpink; */
+    width: 80%;
+    height: 80%;
+    transition: 0.3s ease;
 }
 
-.landingPageTitle h1 {
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin-bottom: -5px;
-    font-size: 5vw;
-    color: rgb(255, 255, 255);
-   
+.div-around-image img{
+    width: 100%;
+    height: 100%;
 }
 
 
-
-
-.blur {
+.another-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
     opacity: 0;
-    color: white;
-    font-size: 1vw;
-    transition: opacity 0.5s ease-in-out; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5px;
+    width: 100%;
+    height:100%;
+    transition: .3s ease;
+    backdrop-filter: blur(7px);
 }
 
-
-
-
-
-
-.image-container:hover .blur,
-.image-container:hover .textBox {
+.another-div:hover{
     opacity: 1;
 }
 
+.another-div a, .mobile-link{
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 4px;
+    padding: .5rem;
+}
+
+.another-div a{
+    color: white;
+    background-color: black;
+}
+
+.card .mobile-link{
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    margin: 2rem;
+}
+
+
+.another-div a:hover{
+    background-color: rgb(47, 45, 45);
+    transform: scale(1.07);
+    color: wheat;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+
+
+.card{
+    display: flex;
+    /* border: 3px solid hotpink; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    color: white;
+    position: relative;
+}
+
+.plug{
+    display: flex;
+    flex-direction: row;
+    /* border: 3px solid hotpink; */
+    justify-content: center;
+}
+
+
+.mobile-link{
+    display: none;
+}
+
+.plug img{
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.plug img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+@media (max-width: 950px) {
+    .image-holder {
+        grid-template-columns: 1fr;
+    }
+    .mobile-link{
+        display: inline;
+    }
+    .another-div{
+        display: none;
+    }
+}
